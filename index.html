@@ -1,0 +1,298 @@
+<!--DOCUMENT html-->
+<html>
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Autumn Owl</title>
+<script>
+    window.onload = function() {
+        var audio = document.querySelector('audio');
+        audio.volume = 0.5; // Set volume to 50%
+    };
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        body {
+            /* Apply the background image */
+            background-image: url('https://i.imgur.com/0DVULoF.png');
+            
+            /* Ensure the background covers the whole page */
+            background-size: cover;
+            
+            /* Center the background */
+            background-position: center;
+            
+            /* Ensure the background stays fixed */
+            background-attachment: fixed;
+            
+            /* Ensure there's no repeat */
+            background-repeat: no-repeat;
+            
+            /* Take the full height of the viewport */
+            min-height: 100vh;
+            
+            /* Reset margins and padding */
+            margin: 0;
+            padding: 0;
+		
+        /* Container for image and text */
+        .image-container {
+            position: relative;
+            display: inline-block;
+            width: 100%; /* Make the container take full width */
+        }
+
+        .rotate {
+            transform: rotate(360deg);
+        }
+
+        /* Style the image */
+        .image-container img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Style for large centered text */
+        .large-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /* Center the text */
+            font-size: 5rem; /* Large text size */
+            color: white;
+            font-family:Brush Script MT;
+            text-shadow: 2px 2px 6px black; /* Make the text more readable */
+            
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        /* Style for small text in the corner */
+        .small-text {
+            position: absolute;
+			top: 60%;
+            left: 39%;
+            bottom: 10px; /* Position at the bottom */
+            right: 10px;  /* Align to the right */
+            font-size: 20px; /* Small text size */
+            color: white;
+            text-shadow: 1px 1px 3px black;
+            padding: 5px;
+            border-radius: 3px;
+        }
+		/* Style for small text 1 in the corner */
+        .small-text1 {
+            position: absolute;
+			top: 63%;
+            left: 40%;
+            bottom: 10px; /* Position at the bottom */
+            right: 10px;  /* Align to the right */
+            font-size: 20px; /* Small text size */
+            color: white;
+            text-shadow: 1px 1px 3px black;
+            padding: 5px;
+            border-radius: 3px;
+        }
+    /* Style for smallest text in the corner */
+        .smallest-text {
+            position: absolute;
+			top: 90%;
+            left: 45%;
+            bottom: 10px; /* Position at the bottom */
+            right: 10px;  /* Align to the right */
+            font-size: 10px; /* Small text size */
+            color: white;
+            text-shadow: 1px 1px 3px black;
+            padding: 5px;
+            border-radius: 3px;
+		
+        }
+		.satisfy-regular {
+  font-family: "Satisfy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+ /* Style the image */
+        .control-image {
+		position: absolute;
+			top: 124%;
+            left: 93%;
+            bottom: 10px; /* Position at the bottom */
+            right: 10px;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+        }
+		.control-images {
+			position: absolute;
+			top: 124%;
+            left: 17%;
+            bottom: 10px; /* Position at the bottom */
+            right: 10px;
+            width: 50px;
+            height: 50px;
+			}
+			
+			.text-with-margin {
+            margin-left: 20px; /* Adds space to the left of the text */
+        }
+		.text-with-margins {
+            margin-left: 14px; /* Adds space to the left of the text */
+        }
+			.styled-image {
+			width:200px;
+			height:auto;
+			margin-left: 900px;
+			}
+			
+
+		
+		
+    
+    </style>
+
+</head>
+<body style="background-color:#f7e6ca">
+
+<!-- Container holding image and text -->
+    <div class="image-container">
+	<img src="https://i.imgur.com/CzXQkMj.png" 'width:1270px;' 'height:auto;' alt="Image with Text Overlay">
+        <!-- Large centered text -->
+        <div class="large-text">Autumn Owl</div>
+ <!-- Small corner text -->
+        <div class="small-text">Blog about Autumn books, movies</div>
+		<div class="small-text1">were u can find autumn vibes</div>
+<div class="smallest-text">Written by:Buthena Abdullah</div>
+    </div>
+	<h1 class="text-with-margin" style='font-size:40px;
+		color:#710c00;
+		font-family:Satisfy;'>Autumn Blog</h1>
+		<!-- Audio element -->
+    <audio loop id="myAudio">
+        <source src="owl.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+<img id="controlImages" src="https://i.imgur.com/20eyV27.png" class="control-images">
+    <!-- Image to control the audio (play/pause) -->
+    <img id="controlImage" src="https://i.imgur.com/wNdRBzE.png" class="control-image" alt="Play" onclick="playPauseAudio()">
+
+    <script>
+        // Get the audio and image elements
+        var audio = document.getElementById("myAudio");
+        var controlImage = document.getElementById("controlImage");
+
+        // Function to play or pause the audio
+        function playPauseAudio() {
+            if (audio.paused) {
+                audio.play();
+                controlImage.src = "https://i.imgur.com/yVhZdSg.png"; // Change image to "Pause" icon
+                controlImage.alt = "Pause"; // Update the alt text
+            } else {
+                audio.pause();
+                controlImage.src = "https://i.imgur.com/wNdRBzE.png"; // Change image back to "Play" icon
+                controlImage.alt = "Play"; // Update the alt text
+            }
+        }
+    </script>
+	<h3 class="text-with-margins" Style="color:#710c00;
+	font-family:Serif;">Embracing Autumn: The Perfect Season for Books and Movies</h3>
+	<p class="text-with-margins" style="color:#884b32
+; font-family:Monospace; font-size:15px;"> As the leaves begin to change from vibrant greens to warm hues of orange, yellow, and red, and the air takes on a crispness that beckons cozy afternoons, autumn emerges as a season of transformation. It’s a time when nature dons its most beautiful attire, inviting us to slow down, reflect,
+	and immerse ourselves in the comforting worlds of books and movies.</p>
+	<h3 class="text-with-margins" Style="color:#710c00;
+	font-family:Serif;">The Allure of Autumn</h3>
+	<p class="text-with-margins" style="color:#884b32
+; font-family:Monospace; font-size:15px;">Autumn, often referred to as fall, is more than just a change in the weather; it symbolizes transition and introspection. The days grow shorter, and the nights longer, encouraging us to retreat indoors and seek solace in our favorite pastimes. As the world outside transforms, so too does our perspective. The cozy ambiance created by the golden glow of sunset combined with the scent of pumpkin spice in the air provides the perfect
+ backdrop for curling up with a good book or enjoying a captivating film.</p>
+ <h3 class="text-with-margins" Style="color:#710c00;
+	font-family:Serif;">The Joy of Reading</h3>
+	<p class="text-with-margins" style="color:#884b32
+; font-family:Monospace; font-size:15px;">There’s something undeniably magical about losing yourself in a book during the autumn months. Perhaps it’s the cozy blankets, the soft rustle of fallen leaves outside, or the sound of rain tapping against the window. Whatever the reason, 
+autumn invites us to explore new stories or revisit beloved ones.</p>
+<ol type="1">
+        <li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:19px; font-weight:bold;">Book Recommendations for Autumn:</li>
+	<pre></pre>
+	<ul>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">The Night Circus</q> by Erin Morgenstern: This enchanting novel weaves a tale of a magical competition set in a mysterious circus that only 
+	opens at night. The lush prose and intricate storytelling make it a perfect read for the whimsical feel of fall.</li>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">The Secret History</q>by Donna Tartt: A dark academic thriller that delves into the lives of a group 
+	of students at a prestigious college. The themes of obsession and morality resonate with the introspective nature of the season.</li>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">Pumpkinheads</q> by Faith Erin Hicks: A charming graphic novel about two friends working at a pumpkin patch. This sweet, lighthearted story captures the essence of fall
+	with its vibrant illustrations and heartwarming themes of friendship and nostalgia.</li>
+	</ul>
+	<pre></pre>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:19px; font-weight:bold;">Creating the Perfect Reading Nook:</li>
+	<pre></pre>
+	<ul>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><b>Comfortable Seating:</b> Find a cozy chair or create a cushy corner with pillows and blankets.</li>
+		<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><b>Ambient Lighting:</b>Use warm, soft lighting or candles to create a calming atmosphere.</li>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><b>Warm Beverages:</b> Brew a cup of tea, coffee, or hot chocolate to sip on as you dive into your book.</li>
+	</ul>
+	</ol>
+	<h3 class="text-with-margins" Style="color:#710c00;
+	font-family:Serif;">The Magic of Autumn Movies</h3>
+	<p class="text-with-margins" style="color:#884b32
+; font-family:Monospace; font-size:15px;">As the chill in the air calls for snug evenings indoors, there’s no better time to indulge in films that capture the spirit of the season. Autumn-themed movies often evoke 
+feelings of nostalgia, warmth, and introspection, making them ideal for cozy nights on the couch.</p>
+
+<ol>
+<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:19px; font-weight:bold;">Autumn Movie Recommendations:</li>
+	<pre></pre>
+	<ul>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">When Harry Met Sally:</q>This classic romantic comedy is set against the backdrop
+	of New York City in autumn.<br> Its witty dialogue and charming storylines make it a timeless choice.</li>
+	
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">Hocus Pocus:</q>A Halloween favorite that blends humor, adventure, and a touch of spookiness.<br> It’s perfect 
+	for families and anyone who enjoys a light-hearted Halloween tale.</li>
+	
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">Dead Poets Society:</q> A powerful drama that emphasizes the importance of individuality and the love of
+	literature.<br> Its themes resonate deeply with the reflective nature of autumn.</li>
+		
+
+	</ul>
+	<pre></pre>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:19px; font-weight:bold;">Setting the Scene for Movie Nights:</li>
+	<pre></pre>
+	<ul>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">Comfortable Seating:</q>Arrange plenty of cushions
+	and blankets for an inviting atmosphere.</li>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">Snacks and Treats:</q>Prepare autumn-inspired snacks like 
+	popcorn sprinkled with pumpkin spice, apple cider, or caramel apples.</li>
+	<li class="text-with-margins" Style="color:#710c00;
+	font-family:Serif; font-size:13px; font-family:Monospace;"><q Style="font-weight:bold;">Mood Lighting:</q>Dim the lights or use string lights to create a cozy cinematic experience.</li>
+	
+	</ol>
+	<pre></pre>
+	<pre></pre>
+	<p class="text-with-margins" style="color:#884b32
+; font-family:Monospace; font-size:15px;">Autumn is a season of change, reflection, and the celebration of stories—both written and visual. Whether you prefer the rustle of pages turning in a book or the flicker of a movie screen, this season provides countless opportunities to escape into different worlds. So, grab your favorite blanket, make a warm beverage, and immerse yourself in the enchanting blend of autumn’s beauty, books, and films. Embrace the magic of the season,
+ and let it inspire your adventures, both on the page and screen. Happy reading and watching!</p>
+ 
+ 
+	
+
+	
+	
+ 
+	
+
+</body>
+</html>
