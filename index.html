@@ -147,6 +147,34 @@
 			height:auto;
 			margin-left: 900px;
 			}
+			/* For mobile devices (phones) */
+@media (max-width: 600px) {
+  body {
+    font-size: 14px; /* Make fonts smaller on mobile */
+  }
+
+  .container {
+    width: 100%; /* Full-width container on mobile */
+  }
+
+  .menu {
+    display: none; /* Hide large menus if not needed on mobile */
+  }
+}
+
+/* For tablets or larger screens */
+@media (min-width: 601px) and (max-width: 900px) {
+  .container {
+    width: 90%;
+  }
+}
+
+/* For desktop screens */
+@media (min-width: 901px) {
+  .container {
+    width: 70%;
+  }
+}
 			
 
 		
